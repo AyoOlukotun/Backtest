@@ -6,7 +6,8 @@ import datetime as dt
 import calendar
 import plotly.express as px
 import plotly.io as pio
-pio.renderers.default = "notebook"
+import plotly.offline as pyo
+pyo.init_notebook_mode(connected = True)
 import math
 import os
 
@@ -58,7 +59,7 @@ class Backtest:
         
     def plot(self):
         fig = px.line(self.output, x = self.output.index, y = "PNL")
-        fig.show(renderer= "iframe")
+        fig.show()
 
     def calculate(self)-> pd.DataFrame:
         # Ensure signal function is assigned

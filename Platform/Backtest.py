@@ -59,6 +59,7 @@ class Backtest:
         
     def plot(self):
         fig = px.line(self.output, x = self.output.index, y = "PNL")
+        fig.update_layout(autosize = True)
         fig.show()
 
     def calculate(self)-> pd.DataFrame:

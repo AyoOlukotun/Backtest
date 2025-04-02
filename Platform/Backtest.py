@@ -8,6 +8,7 @@ import plotly.express as px
 import plotly.io as pio
 import plotly.offline as pyo
 pyo.init_notebook_mode(connected = True)
+pio.renderers.default = "plotly_mimetype+jupyterlab"
 import math
 import os
 
